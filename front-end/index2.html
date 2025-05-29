@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="utf-8">
+    <title>The end of books</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        /* Прави fullscreen позадина со background image */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-image: url("background.jpg"); /* <<< Тука стави ја твојата слика */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            color: white;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px black;
+        }
+
+        /* Малото видео на средина */
+        #myVideo {
+            width: 400px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-links li {
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Лого -->
+    <div class="logo">Library</div>
+
+    <!-- Центрирано мало видео -->
+    <video autoplay muted loop id="myVideo">
+        <source src="video.mp4" type="video/mp4">
+        Вашиот прелистувач не поддржува HTML5 видео.
+    </video>
+
+    <!-- Менито -->
+    <ul class="nav-links">
+        <li><a href="homepage.html">HomePage</a></li>
+        <li><a href="index.html">Authors</a></li>
+        <li><a href="index1.html">Books</a></li>
+        <li><a href="index2.html">The end</a></li>
+    </ul>
+
+</body>
+</html>

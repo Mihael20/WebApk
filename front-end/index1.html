@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Books</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadAjaxBooks()">
+    <h1>Libary</h1>
+    <br>
+	<br>
+	<br>
+
+    <div id="form">
+        <form>
+            <p>ID <br />
+                <input type="text" id="book_id" value="" /> <button type="button"
+                    onclick="loadOneBook()">Read</button>
+            </p>
+            <p>Book Name <br />
+                <input type="text" id="book_name" value="" />
+            </p>
+            <p>Format Name <br />
+                <input type="text" id="format_name" value="" />
+            </p>
+            <br />
+            <br />
+            <button type="button" onclick="addBook()">Add</button>
+            <button type="button" onclick="updateBook()">Update</button>
+            <button type="button" onclick="deleteBook()">Delete</button>
+        </form>
+    </div>
+
+    <div id="list">
+        <p>table with books.</p>
+    </div>
+
+    <script src="ajax1.js"></script>
+    <script src="books.js"></script>
+<!-- Navigation bar -->
+<nav class="navbar">
+
+<!-- LOGO -->
+
+<div class="logo">Libary</div>
+
+<!-- NAVIGATION MENU -->
+
+<ul class="nav-links">
+
+
+
+
+
+<!-- NAVIGATION MENUS -->
+
+<div class="menu">
+<li><a href="homepage.html">HomePage</a></li>
+
+<li><a href="index.html">Authors</a></li>
+
+<li><a href="index1.html">Books</a></li>
+
+
+<li><a href="index2.html">The end</a></li>
+
+</div>
+
+</ul>
+
+</nav>
+
+<h2> Go back to Authors to see the Authors</h2>
+
+</body>
+
+</html>

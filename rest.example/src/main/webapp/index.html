@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>XMLHttpRequest Object Example</title>
+</head>
+<body>
+	<h1>XMLHttpRequest Object Example</h1>
+
+	<div id="demo">
+		<p>Here AJAX will create drop down list of authors.</p>
+	</div>
+
+	<br />
+
+	<button type="button" onclick="loadAuthors()">Get Authors</button>
+
+	<br /> <br />
+
+	<button type="button" onclick="loadOneAuthor()">Get One Author</button>
+
+
+	<script src="ajax.js"></script>
+
+	<script>
+		function loadAuthors() {
+			loadAjaxRequest(createDropDownList);
+		}
+
+		function createDropDownList(responseText) {
+			console.log(responseText);
+			let response = JSON.parse(responseText);
+			console.log(response);
+			let result = "<select>";
+
+			// the response is an array
+			for (let i = 0; i < response.length; i++) {
+				result += `<option value= &quot;${response[i].id}&quot;>${response[i].firstName} ${response[i].lastName}</option>`;
+			}
+
+			result += "</select>";
+
+			document.getElementById("demo").innerHTML = result;
+		}
+		
+		function loadOneAuthor() {
+			  fetch('http://localhost:8080/authors/2')
+			     .then(response => response.json())
+		         .then(json => prepareAuthor(json));
+		}
+		
+		function prepareAuthor(json) {
+			let result = `<p> id:${json.id} = ${json.firstName}, ${json.lastName} </p>`;
+			document.getElementById("demo").innerHTML = result;
+		}
+		
+	</script>
+
+</body>
+</html>

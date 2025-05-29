@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>XMLHttpRequest Object Example</title>
+</head>
+<body>
+	<h1>XMLHttpRequest Object Example</h1>
+
+	<div id="demo">
+		<p>Here AJAX will create drop down list of books.</p>
+	</div>
+
+	<br />
+
+	<button type="button" onclick="loadBooks()">Get Books</button>
+
+	<br /> <br />
+
+	<button type="button" onclick="loadOneBook()">Get One Book</button>
+
+
+	<script src="ajax1.js"></script>
+
+	<script>
+		function loadBooks() {
+			loadAjaxRequest(createDropDownList);
+		}
+
+		function createDropDownList(responseText) {
+			console.log(responseText);
+			let response = JSON.parse(responseText);
+			console.log(response);
+			let result = "<select>";
+
+			// the response is an array
+			for (let i = 0; i < response.length; i++) {
+				result += `<option value= &quot;${response[i].id}&quot;>${response[i].bookName} ${response[i].formatName}</option>`;
+			}
+
+			result += "</select>";
+
+			document.getElementById("demo").innerHTML = result;
+		}
+		
+		function loadOneBook() {
+			  fetch('http://localhost:8080/books/2')
+			     .then(response => response.json())
+		         .then(json => prepareBook(json));
+		}
+		
+		function prepareBook(json) {
+			let result = `<p> id:${json.id} = ${json.bookName}, ${json.formatName} </p>`;
+			document.getElementById("demo").innerHTML = result;
+		}
+		
+	</script>
+
+</body>
+</html>

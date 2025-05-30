@@ -2,61 +2,59 @@
 <html lang="mk">
 <head>
     <meta charset="utf-8">
-    <title>The end of books</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The End of Books</title>
     <link rel="stylesheet" href="style1.css">
     <style>
-        /* Прави fullscreen позадина со background image */
+        * {
+            box-sizing: border-box;
+        }
+
         body, html {
             margin: 0;
             padding: 0;
-            height: 100vh;
+            height: 100%;
             font-family: Arial, sans-serif;
-            background-image: url("background.jpg"); /* <<< Тука стави ја твојата слика */
+            background-image: url("background.jpg");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
             color: white;
         }
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 3px black;
+        /* Fixed top navbar */
+        nav {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 1000;
         }
 
-        /* Малото видео на средина */
-        #myVideo {
-            width: 400px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px black;
         }
 
         .nav-links {
             list-style: none;
-            padding: 0;
-            margin-top: 20px;
             display: flex;
             gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .nav-links li {
             margin: 0;
+            padding: 0;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
             font-size: 16px;
-            background-color: rgba(0, 0, 0, 0.4);
+            background-color: rgba(255, 255, 255, 0.1);
             padding: 6px 12px;
             border-radius: 6px;
             transition: background-color 0.3s;
@@ -65,27 +63,93 @@
         .nav-links a:hover {
             background-color: rgba(255, 255, 255, 0.3);
         }
+
+        /* Main content below navbar */
+        .content {
+            margin-top: 80px;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-shadow: 2px 2px 6px black;
+            margin-bottom: 20px;
+        }
+
+        video {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 20px;
+            }
+
+            .nav-links a {
+                font-size: 14px;
+                padding: 5px 10px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .nav-links a {
+                padding: 8px;
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
     </style>
 </head>
-
 <body>
 
-    <!-- Лого -->
-    <div class="logo">Library</div>
+    <!-- Navigation bar -->
+    <nav>
+        <div class="logo">Library</div>
+        <ul class="nav-links">
+            <li><a href="homepage.html">HomePage</a></li>
+            <li><a href="index.html">Authors</a></li>
+            <li><a href="index1.html">Books</a></li>
+            <li><a href="form/form.html">FeedBack</a></li>
+            <li><a href="index2.html">The End</a></li>
+        </ul>
+    </nav>
 
-    <!-- Центрирано мало видео -->
-    <video autoplay muted loop id="myVideo">
-        <source src="video.mp4" type="video/mp4">
-        Вашиот прелистувач не поддржува HTML5 видео.
-    </video>
-
-    <!-- Менито -->
-    <ul class="nav-links">
-        <li><a href="homepage.html">HomePage</a></li>
-        <li><a href="index.html">Authors</a></li>
-        <li><a href="index1.html">Books</a></li>
-        <li><a href="index2.html">The end</a></li>
-    </ul>
+    <!-- Page content -->
+    <div class="content">
+        <h1>The End of Books</h1>
+        <video autoplay muted loop>
+            <source src="video.mp4" type="video/mp4">
+            Вашиот прелистувач не поддржува HTML5 видео.
+        </video>
+    </div>
 
 </body>
 </html>
+

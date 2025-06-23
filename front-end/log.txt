@@ -1,0 +1,10 @@
+[2025-06-23T12:59:16.178Z] REGISTER attempt: mihael.kusibojoski26@gmail.com => DENIED
+[2025-06-23T13:00:29.843Z] REGISTER attempt: marija@example.com => SUCCESS
+[2025-06-23T13:00:41.112Z] LOGIN attempt: marija@example.com => FAILED
+[2025-06-23T13:00:49.323Z] LOGIN attempt: marija@example.com => SUCCESS
+[2025-06-23T13:09:11.652Z] LOGIN attempt: marija@example.com => FAILED
+[2025-06-23T13:09:27.245Z] REGISTER attempt: marija@example.com => SUCCESS
+[2025-06-23T13:09:29.036Z] LOGIN attempt: marija@example.com => SUCCESS
+[2025-06-23T13:09:44.305Z] LOGIN attempt: marija@example.com => SUCCESS
+[2025-06-23T13:13:16.044Z] REGISTER attempt: marija@example.com => SUCCESS
+[2025-06-23T13:13:20.343Z] LOGIN attempt: marija@example.com => SUCCESS
